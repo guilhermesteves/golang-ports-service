@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ps;
+option go_package = "ps/";
+
+message Port {
+  string ID = 1;
+  bytes Content = 2;
+}
+
+message Empty {}
+
+service PortService {
+  rpc InsertOrUpdate(Port) returns (Empty);
+}
